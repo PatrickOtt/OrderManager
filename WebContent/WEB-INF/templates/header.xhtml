@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:f="http://java.sun.com/jsf/core"
+xmlns:ui="http://java.sun.com/jsf/facelets"
+xmlns:p="http://primefaces.org/ui">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Insert title here</title>
+</h:head>
+<h:body>
+<ui:composition>
+			<div id="header">
+					OrderManager 1.0 <br/>
+					<h:form id="searchForm">
+						<p:panel id="searchPanel" style="position: absolute; left: 730px; top: 10px">
+							<p:outputLabel for="searchArticle" value="Artikelsuche"/>
+							<p:autoComplete 
+								id="searchArticle" value="#{articleBean.selectedArticle}" 
+								completeMethod="#{articleBean.complete}" 
+								var="article" itemLabel="#{article.articleName}" 
+								itemValue="#{article}" converter="articleConverter"
+								/>
+						</p:panel>
+					</h:form>
+			</div><!-- #header-->
+</ui:composition>
+</h:body>
+</html>

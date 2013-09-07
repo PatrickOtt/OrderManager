@@ -1,0 +1,36 @@
+Willkommen zum siebten Teil des Primefaces Tutorials.
+
+Heute wie im letzten Video angekündigt die Navigation auf der linken Seite
+und dann basteln wir uns um Header oben rechts (falls meine CSS Kenntnisse ausreichen)
+noch ein Suchefeld für die Artikel.
+
+Okay, das mit dem Menü links war ja kein großes Problem, unser MenuModel haben 
+wir in der NavigationBean bereits vorbereitet und geben es per getMenuModel() nach 
+außen.
+
+Das Suchfeld für die Artikel soll und nun als nächstes beschäftigen, damit es für
+unsere künftigen Besucher einfach wird, soll das Feld gleich eine Autovervollständigen
+Funktion anbieten.
+
+Dazu brauchen zunächst ein paar kleine Änderungen an der ArticleBean.
+
+So, die Vorbereitung sind soweit abgeschlossen, nehmen wir uns die einzelnen Properties bzw. die complete()
+Methode kurz vor:
+
+public Article selectedArticle -> beinhaltet dann den ausgewählten Artikel
+public List<Article> articles -> hier sind alle in der DB befindlichen Artikel drin
+in unserer complete(String query) Methode bauen wir uns eine Liste mit den in Frage
+kommenden Artikeln zusammen, die anhand der Eingabe des künftigen Benutzers ausgewählt werden.
+
+Cool, scheint ja bereits zu funktionieren, aber irgendwie kann der Artikelname nicht angezeigt werden,
+sondern es wird so "kryptisch" angezeigt. Ändern können wir das mit einem ArticleConverter. 
+Den bauen wir uns noch eben zusammen.
+
+Damit sind wir nun auch wieder lesbar mit unserem Ergebnis der Suche.
+
+Den Quellcode bis hier hin gibt's unter http://www.professional-webworkx.de zum Download als tar.gz 
+
+Vielen Dank für's Reinschauen und bis zum nächsten Mal, da werden wir einen Warenkorb bauen,
+eine Artikelliste endlich mal implementieren und eine nette Artikelübersicht, wie man sie 
+aus verschiedenen Onlineshops kennt.
+

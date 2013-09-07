@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:f="http://java.sun.com/jsf/core"
+xmlns:ui="http://java.sun.com/jsf/facelets"
+xmlns:p="http://primefaces.org/ui">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>..:: Artikel anlegen ::..</title>
+</h:head>
+<h:body>
+<ui:composition template="/WEB-INF/templates/master.xhtml">
+<ui:define name="content">
+
+	<h1>Neuen Artikel erstellen</h1>
+	<h:form id="createArticle">
+	<p:growl id="messages"/>
+	<p:panel>
+	<p:panelGrid columns="2" id="newArticlePanel">
+	
+		<p:outputLabel for="articleNumber" value="Artikelnummer"/>
+		<p:inputText id="articleNumber" value="#{articleBean.articleNumber}"/>
+	
+		<p:outputLabel for="articleCount" value="Anzahl"/>
+		<p:spinner id="articleCount" value="#{articleBean.articleCount}"/>
+		
+		<p:outputLabel for="articleName" value="Name"/>
+		<p:inputText id="articleName" value="#{articleBean.articleName}" required="true" requiredMessage="Bitte Artikelnamen eingeben"/>
+
+		<p:outputLabel for="articleDescription" value="Beschreibung"/>
+		<p:inputTextarea id="articleDescription" value="#{articleBean.articleDescription}"/>
+		
+		<p:commandButton id="saveBtn" value="Speichern" icon="ui-icon-disk" action="#{articleBean.save()}" update="messages,newArticlePanel"/>		
+		<p:commandButton id="cancelBtn" value="Abbrechen" action="index"/>
+		
+	</p:panelGrid>
+	</p:panel>		
+	</h:form>
+</ui:define>
+</ui:composition>
+</h:body>
+</html>
