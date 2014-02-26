@@ -27,6 +27,8 @@ public class Article {
 	private int articleCount;
 	private String articleName;
 	private String articleDescription;
+	private String articlePicture;
+	private double articlePrice;
 	
 	public Article() {
 		super();
@@ -72,5 +74,21 @@ public class Article {
 	
 	public void setArticleDescription(String articleDescription) {
 		this.articleDescription = articleDescription;
+	}
+
+	public String getArticlePicture() {
+		return articlePicture;
+	}
+
+	public void setArticlePicture(String articlePicture) {
+		this.articlePicture = articlePicture;
+	}
+
+	public double getArticlePrice() {
+		return articlePrice;
+	}
+
+	public void setArticlePrice(double articlePrice) {
+		this.articlePrice = articlePrice;
 	}
 }

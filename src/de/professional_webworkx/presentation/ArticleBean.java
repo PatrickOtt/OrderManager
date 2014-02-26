@@ -101,6 +101,10 @@ public class ArticleBean implements Serializable {
 		this.selectedArticle = selectedArticle;
 	}
 
+	/**
+	 * Liefert eine Liste aller verfügbaren Artikel 
+	 * @return List<Article>
+	 */
 	public List<Article> getArticles() {
 		return articles;
 	}

@@ -1,36 +1,30 @@
-Willkommen zum siebten Teil des Primefaces Tutorials.
+Willkommen zum achten Teil des Primefaces Tutorials!
 
-Heute wie im letzten Video angekündigt die Navigation auf der linken Seite
-und dann basteln wir uns um Header oben rechts (falls meine CSS Kenntnisse ausreichen)
-noch ein Suchefeld für die Artikel.
+Sorry für die lange Pause zwischen die Videos, Prüfungsstress ;)
 
-Okay, das mit dem Menü links war ja kein großes Problem, unser MenuModel haben 
-wir in der NavigationBean bereits vorbereitet und geben es per getMenuModel() nach 
-außen.
+So, heute wollen wir mal eine Artikelübersichtsseite basteln, hier hilft uns Primefaces wieder 
+enorm, denn wir können uns z.B. eine DataTable hernehmen und die Artikel darin out-of-the-box relativ
+ansprechend darstellen!
 
-Das Suchfeld für die Artikel soll und nun als nächstes beschäftigen, damit es für
-unsere künftigen Besucher einfach wird, soll das Feld gleich eine Autovervollständigen
-Funktion anbieten.
+Ich denke das Grundprinzip dieser DataTable ist klar geworden, ich baue die Tabelle nun mal fertig,
+hierzu kkommt die ArticleBean zum Einsatz, die uns eine Liste aller Artikel in der Datenbank
+zur Verfügung stellt.
 
-Dazu brauchen zunächst ein paar kleine Änderungen an der ArticleBean.
+Die DataTable von Primefaces können wir noch mit richtig vielen Features versehen, das zeige ich dann gleich
+direkt auf der Projektseite.
 
-So, die Vorbereitung sind soweit abgeschlossen, nehmen wir uns die einzelnen Properties bzw. die complete()
-Methode kurz vor:
+Schaut doch schon gar net schlecht aus, dann brauchen wir natürlich noch ein default_article.png, da im 
+Augenblick die Artikel, die wir in unserer Datenbank haben, allesamt kein Artikelbild haben.
+Mal schauen was auf der HDD zu finden ist ;)
 
-public Article selectedArticle -> beinhaltet dann den ausgewählten Artikel
-public List<Article> articles -> hier sind alle in der DB befindlichen Artikel drin
-in unserer complete(String query) Methode bauen wir uns eine Liste mit den in Frage
-kommenden Artikeln zusammen, die anhand der Eingabe des künftigen Benutzers ausgewählt werden.
 
-Cool, scheint ja bereits zu funktionieren, aber irgendwie kann der Artikelname nicht angezeigt werden,
-sondern es wird so "kryptisch" angezeigt. Ändern können wir das mit einem ArticleConverter. 
-Den bauen wir uns noch eben zusammen.
+So, damit haben wir schon wieder einen Schritt geschafft und zeigen unseren Kunden nun die Artikel recht ansprechend an,
+noch ein kurzer Blick auf die Primefaces Seite zeigt, dass die Table noch recht nett formatiert werden kann.
+Da es sich hier um einen recht langen Ausdruck handelt, kopiere ich mir den auch immer rüber..
 
-Damit sind wir nun auch wieder lesbar mit unserem Ergebnis der Suche.
+Damit haben wir nun eine Tabelle in der Hand, die mit Hilfe von etwas Ajax auch dynamisch aktualisiert werden kann.
 
-Den Quellcode bis hier hin gibt's unter http://www.professional-webworkx.de zum Download als tar.gz 
+Den Quellcode packe ich nun zusammen und lege alles zum Download auf http://blog.professional-webworkx.de unter dem
+Atikeltitle "JavaEE6 - 08 Artikelübersicht - Primefacestutorial" ab
 
-Vielen Dank für's Reinschauen und bis zum nächsten Mal, da werden wir einen Warenkorb bauen,
-eine Artikelliste endlich mal implementieren und eine nette Artikelübersicht, wie man sie 
-aus verschiedenen Onlineshops kennt.
-
+Danke für's Anschauen und das bisher eingegangene Feedback, hat mich sehr gefreut!

@@ -2,7 +2,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 xmlns:h="http://java.sun.com/jsf/html"
-xmlns:ui="http://java.sun.com/jsf/facelets">
+xmlns:ui="http://java.sun.com/jsf/facelets"
+xmlns:f="http://xmlns.jcp.org/jsf/core"
+xmlns:p="http://primefaces.org/ui">
 <h:head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Insert title here</title>
@@ -10,7 +12,27 @@ xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:body>
 <ui:composition template="/WEB-INF/templates/master.xhtml">
 <ui:define name="content">
-	Übersicht aller Artikel.. kommt dann später noch.
+	<h:outputText value="Artikel&uuml;bersicht"/>
+	<!-- Tabelle zur Darstellung der Artikel -->
+	<p:dataTable value="#{articleBean.articles}" var="article" paginator="true" rows="10"  
+                 paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"  
+                 rowsPerPageTemplate="5,10,15">
+		<p:column>
+			<f:facet name="header"></f:facet>
+			<p:graphicImage name="#{article.articlePicture}" library="images" rendered="#{not empty article.articlePicture}"/>
+			<p:graphicImage name="default_article.png" library="images" alt="Artikelbild" rendered="#{empty article.articlePicture}"/>
+		</p:column>
+		<p:column>
+			<f:facet name="header">Artikelnummer</f:facet>
+			<h:outputText value="#{article.articleName}"></h:outputText>
+		</p:column>
+		<p:column>
+			<f:facet name="header">Preis</f:facet>
+			<h:outputText value="#{article.articlePrice}">
+				<f:convertNumber currencySymbol="EUR" maxFractionDigits="2" currencyCode="EUR"/>
+			</h:outputText>
+		</p:column>
+	</p:dataTable>
 </ui:define>
 </ui:composition>
 </h:body>
