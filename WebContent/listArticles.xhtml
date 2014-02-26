@@ -13,24 +13,38 @@ xmlns:p="http://primefaces.org/ui">
 <ui:composition template="/WEB-INF/templates/master.xhtml">
 <ui:define name="content">
 	<h:outputText value="Artikel&uuml;bersicht"/>
-	<!-- Tabelle zur Darstellung der Artikel -->
-	<p:dataTable value="#{articleBean.articles}" var="article" paginator="true" rows="10"  
-                 paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"  
-                 rowsPerPageTemplate="5,10,15">
+	<p:dataTable value="#{articleBean.articles}" var="article"
+	paginator="true" rows="20"  
+    paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"  
+    rowsPerPageTemplate="20,40,60"
+	>
 		<p:column>
-			<f:facet name="header"></f:facet>
+			<f:facet name="header">Artikelbild</f:facet>
+			<!-- Das richtige Artikelbild wird angezeigt, wenn es vorhanden ist -->
 			<p:graphicImage name="#{article.articlePicture}" library="images" rendered="#{not empty article.articlePicture}"/>
-			<p:graphicImage name="default_article.png" library="images" alt="Artikelbild" rendered="#{empty article.articlePicture}"/>
+			<!-- Falls kein Artikelbild in der Datenbank steht, nehmen wir einfach ein default image, damit das nicht so leer ausschaut. -->
+			<p:graphicImage name="default_article.png" library="images" rendered="#{empty article.articlePicture}"/>
 		</p:column>
+		
 		<p:column>
-			<f:facet name="header">Artikelnummer</f:facet>
-			<h:outputText value="#{article.articleName}"></h:outputText>
+			<f:facet name="header">Artikel</f:facet>
+			<h:outputText value="#{article.articleName}"/>
 		</p:column>
+		
 		<p:column>
 			<f:facet name="header">Preis</f:facet>
-			<h:outputText value="#{article.articlePrice}">
-				<f:convertNumber currencySymbol="EUR" maxFractionDigits="2" currencyCode="EUR"/>
+			<h:outputText id="price" value="#{article.articlePrice}">
+				<f:convertNumber for="price" type="currency" currencyCode="EUR" maxFractionDigits="2"/>
 			</h:outputText>
+		</p:column>
+		
+		<!-- Hier folgen gleich noch die Links um die Details anzuschauen und den Artikel in den Warenkorb zu legen -->
+		<p:column>
+			<f:facet name="header"></f:facet>
+			<h:panelGrid columns="2">
+				<h:outputLink value="Beschreibung"></h:outputLink>
+				<h:outputLink value="In den Warenkorb"></h:outputLink>
+			</h:panelGrid>
 		</p:column>
 	</p:dataTable>
 </ui:define>

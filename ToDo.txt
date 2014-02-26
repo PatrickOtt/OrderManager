@@ -1,30 +1,26 @@
-Willkommen zum achten Teil des Primefaces Tutorials!
+Herzlich willkommen zum neunten Teil der Primefaces Tutorial Reihe,
 
-Sorry für die lange Pause zwischen die Videos, Prüfungsstress ;)
+ich muss mich zuerst für die lange Pause zwischen den Videos entschuldigen, aber es gab einiges zu tun..
+Als nächstes herzlichen Dank für das Feedback, das bisher einging oder auch die (Re)Tweets auf Twitter 
+sind gern gesehen (natürlich auch weiterhin ;) )
 
-So, heute wollen wir mal eine Artikelübersichtsseite basteln, hier hilft uns Primefaces wieder 
-enorm, denn wir können uns z.B. eine DataTable hernehmen und die Artikel darin out-of-the-box relativ
-ansprechend darstellen!
+So, heute wollen wir uns eine kleine Artikelübersicht basteln, hierzu verwenden wir die dataTable, die uns
+Primefaces schon recht ansprechend zur Verfügung stellt.
 
-Ich denke das Grundprinzip dieser DataTable ist klar geworden, ich baue die Tabelle nun mal fertig,
-hierzu kkommt die ArticleBean zum Einsatz, die uns eine Liste aller Artikel in der Datenbank
-zur Verfügung stellt.
+Im Augenblick schauts ja noch so aus, also los.
 
-Die DataTable von Primefaces können wir noch mit richtig vielen Features versehen, das zeige ich dann gleich
-direkt auf der Projektseite.
+Nun können wir die dataTable noch etwas erweitern und z.B. einen Paginationmechanismus einbauen, dazu spicke ich
+kurz auf der Primefaces Project Seite..
 
-Schaut doch schon gar net schlecht aus, dann brauchen wir natürlich noch ein default_article.png, da im 
-Augenblick die Artikel, die wir in unserer Datenbank haben, allesamt kein Artikelbild haben.
-Mal schauen was auf der HDD zu finden ist ;)
+Somit können unsere kommenden Kunden bald in der Artikelliste blättern und dann hoffentlich auch fleißig bestellen..
 
+Jetzt haben wir in kurzer Zeit eine nette Ansicht erreicht und können unsere Artikel in der Listenansicht 
+präsentieren.
 
-So, damit haben wir schon wieder einen Schritt geschafft und zeigen unseren Kunden nun die Artikel recht ansprechend an,
-noch ein kurzer Blick auf die Primefaces Seite zeigt, dass die Table noch recht nett formatiert werden kann.
-Da es sich hier um einen recht langen Ausdruck handelt, kopiere ich mir den auch immer rüber..
+Den Code zum Projekt lade ich zu GitHub hoch, hier der Link: https://github.com/PatrickOtt/OrderManager
+den stelle ich zusätzlich noch auf http://blog.professional-webworkx.de und auch in den Videobeschreibung.
 
-Damit haben wir nun eine Tabelle in der Hand, die mit Hilfe von etwas Ajax auch dynamisch aktualisiert werden kann.
+An der Stelle bin ich für dieses Video am Ende und hoffe es hat euch weitergebracht.
+Warenkorbimplementierung folgt..
 
-Den Quellcode packe ich nun zusammen und lege alles zum Download auf http://blog.professional-webworkx.de unter dem
-Atikeltitle "JavaEE6 - 08 Artikelübersicht - Primefacestutorial" ab
-
-Danke für's Anschauen und das bisher eingegangene Feedback, hat mich sehr gefreut!
+Danke für's Anschauen!
