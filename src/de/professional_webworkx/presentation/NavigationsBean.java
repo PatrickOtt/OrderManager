@@ -1,13 +1,18 @@
 package de.professional_webworkx.presentation;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.enterprise.inject.Model;
+import javax.inject.Inject;
 
 import org.primefaces.component.menuitem.MenuItem;
 import org.primefaces.component.submenu.Submenu;
 import org.primefaces.model.DefaultMenuModel;
 import org.primefaces.model.MenuModel;
+
+import de.professional_webworkx.business.ShoppingCart;
+import de.professional_webworkx.model.Article;
 
 // entspricht @Named und @RequestScoped
 @Model
@@ -20,6 +25,9 @@ public class NavigationsBean implements Serializable {
 
 	private MenuItem item;
 	private MenuModel menuModel;
+	
+	@Inject
+	ShoppingCart shoppingCart;
 	
 	public NavigationsBean() {
 		menuModel = initMenu();
@@ -62,5 +70,9 @@ public class NavigationsBean implements Serializable {
 	
 	public MenuModel getMenuModel() {
 		return menuModel;
+	}
+	
+	public List<Article> getShoppingCart() {
+		return shoppingCart.getShoppingCart();
 	}
 }

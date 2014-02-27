@@ -2,13 +2,19 @@ package de.professional_webworkx.presentation;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 
 import javax.annotation.PostConstruct;
+import javax.enterprise.context.SessionScoped;
 import javax.enterprise.inject.Model;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
+import javax.inject.Named;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
@@ -16,6 +22,7 @@ import javax.validation.constraints.Size;
 
 import de.professional_webworkx.annotations.ArticleNumber;
 import de.professional_webworkx.business.ArticleService;
+import de.professional_webworkx.business.ShoppingCart;
 import de.professional_webworkx.model.Article;
 
 @Model
@@ -34,7 +41,6 @@ public class ArticleBean implements Serializable {
 	private Article selectedArticle;
 	private List<Article> articles = new ArrayList<Article>();
 	
-
 	// EJB injezieren lassen
 	@Inject
 	ArticleService articleService;
@@ -138,8 +144,9 @@ public class ArticleBean implements Serializable {
 		addMessage("Artikel erfolgreich angelegt");
 	}
 	
-	private void addMessage(String summary) {
+	public void addMessage(String summary) {
 		FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, summary, null);
-		FacesContext.getCurrentInstance().addMessage(null, message);
+		FacesContext ctx = FacesContext.getCurrentInstance();
+		ctx.addMessage(null, message);
 	}
 }

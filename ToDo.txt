@@ -1,26 +1,32 @@
-Herzlich willkommen zum neunten Teil der Primefaces Tutorial Reihe,
+Herzlich willkommen zum 10. Teil des Primefaces Tutorials - inzwischen auch in FullHD :-D
 
-ich muss mich zuerst für die lange Pause zwischen den Videos entschuldigen, aber es gab einiges zu tun..
-Als nächstes herzlichen Dank für das Feedback, das bisher einging oder auch die (Re)Tweets auf Twitter 
-sind gern gesehen (natürlich auch weiterhin ;) )
+Heute wollen wir uns den Warenkorb bauen, hierzu hab ich mir überlegt, wir machen ein panel in den Header der Seite, direkt unter die
+Suchbox, dort wird dann später angezeigt, ob der Warenkorb noch leer ist oder wieviele Artikel schon drin liegen.
 
-So, heute wollen wir uns eine kleine Artikelübersicht basteln, hierzu verwenden wir die dataTable, die uns
-Primefaces schon recht ansprechend zur Verfügung stellt.
+Dazu habe ich mir ein png aus einer Web-Library runtergeladen.. das liegt ja später auch mit im Repository bei Github.
 
-Im Augenblick schauts ja noch so aus, also los.
+Implementierungstechnisch dachte ich an eine eigene CDI Bean, vielleicht ShoppingCartPM, die uns eine Liste mit Artikeln
+halten kann und der wir einfach per Klick auf den entsprechenden Artikel einen hinzufügen oder auch wieder entfernen können.
 
-Nun können wir die dataTable noch etwas erweitern und z.B. einen Paginationmechanismus einbauen, dazu spicke ich
-kurz auf der Primefaces Project Seite..
+Los geht's..
 
-Somit können unsere kommenden Kunden bald in der Artikelliste blättern und dann hoffentlich auch fleißig bestellen..
+So schnell ging das.. So, nun haben wir die Artikel schon im Warenkorb liegen. 
+Designtechnisch muss ich gestehen, hab ich kein Händchen dafür, daher sieht das eher spartanisch aus.
+Aber egal, wenn jetzt Artikel im Korb liegen, sollen die ja auch wenigstens noch auf einer Übersichtsseite mal angezeigt
+werden, damit der User nochmal prüfen kann, ob er alles hat oder vielleicht irgendwas zuviel rein hat.
 
-Jetzt haben wir in kurzer Zeit eine nette Ansicht erreicht und können unsere Artikel in der Listenansicht 
-präsentieren.
+Dazu bauen wir eine neue XHTML Seite, ich nenn' die mal shoppingCart.xhtml. Da zeigen
+wir den User gleich die Liste an.
 
-Den Code zum Projekt lade ich zu GitHub hoch, hier der Link: https://github.com/PatrickOtt/OrderManager
-den stelle ich zusätzlich noch auf http://blog.professional-webworkx.de und auch in den Videobeschreibung.
+Testen..
 
-An der Stelle bin ich für dieses Video am Ende und hoffe es hat euch weitergebracht.
-Warenkorbimplementierung folgt..
+Cool, damit ist der relativ primitive Einkaufskorb schon fertig.
+Im nächsten Schritt müsste man sich nun überlegen, wie die Bezahlung erfolgen soll und
+über welche APIs man hier eventuell noch Informationen bezieht, z.B. im Unternehmen, 
+wo die Mitarbeiter per Chipkarte o.ä. an einem zentralen TTerminal bezahlen, das uns
+dann ein bezahlt Flag setzt oder so.
 
-Danke für's Anschauen!
+Ansonsten gibt's auch ganz nette Beispiele für die PayPal Integration. Bei Gelegenheit
+werde ich da nochmal ansetzen und ein Video nachschieben.
+
+Code pushe ich wieder zu Github. 

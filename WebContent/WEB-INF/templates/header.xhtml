@@ -14,7 +14,7 @@ xmlns:p="http://primefaces.org/ui">
 			<div id="header">
 					OrderManager 1.0 <br/>
 					<h:form id="searchForm">
-						<p:panel id="searchPanel" style="position: absolute; left: 730px; top: 10px">
+						<p:panel id="searchPanel" style="position: absolute; left: 64%; top: 10px">
 							<p:outputLabel for="searchArticle" value="Artikelsuche"/>
 							<p:autoComplete 
 								id="searchArticle" value="#{articleBean.selectedArticle}" 
@@ -22,6 +22,14 @@ xmlns:p="http://primefaces.org/ui">
 								var="article" itemLabel="#{article.articleName}" 
 								itemValue="#{article}" converter="articleConverter"
 								/>
+						</p:panel>
+						<p:panel id="cartPanel" style="position: absolute; left: 64%; top: 55px; width: 285px; height: 80px;">
+							<h:outputText value="Ihr Warenkorb"/><br/>
+							<h:panelGrid columns="3">
+							<p:graphicImage name="cart.png" library="images"/>
+							<h:outputText value="#{shoppingCartBean.shoppingCart.size()} Artikel"/>
+							<p:commandButton rendered="#{shoppingCartBean.shoppingCart.size() > 0}" ajax="false" action="#{shoppingCartBean.showShoppingCart()}" value="Kaufen"/>
+							</h:panelGrid>
 						</p:panel>
 					</h:form>
 			</div><!-- #header-->

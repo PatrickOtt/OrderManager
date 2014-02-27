@@ -12,6 +12,8 @@ xmlns:p="http://primefaces.org/ui">
 <h:body>
 <ui:composition template="/WEB-INF/templates/master.xhtml">
 <ui:define name="content">
+	<h:form id="articleList">
+	<p:growl id="msg" showDetail="true"/>  
 	<h:outputText value="Artikel&uuml;bersicht"/>
 	<p:dataTable value="#{articleBean.articles}" var="article"
 	paginator="true" rows="20"  
@@ -42,11 +44,12 @@ xmlns:p="http://primefaces.org/ui">
 		<p:column>
 			<f:facet name="header"></f:facet>
 			<h:panelGrid columns="2">
-				<h:outputLink value="Beschreibung"></h:outputLink>
-				<h:outputLink value="In den Warenkorb"></h:outputLink>
+				<p:commandLink value="link"/>
+				<p:commandLink id="addToCartLink" actionListener="#{shoppingCartBean.addArticle(article)}" value="in den Warenkorb" update=":articleList:msg, :searchForm:cartPanel"/>
 			</h:panelGrid>
 		</p:column>
 	</p:dataTable>
+	</h:form>
 </ui:define>
 </ui:composition>
 </h:body>
