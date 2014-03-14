@@ -25,14 +25,26 @@
 				<h:outputText value="#{article.articlePrice}">
 					<f:convertNumber currencyCode="EUR" maxFractionDigits="2"/>
 				</h:outputText>
+				<f:facet name="footer">
+					Zwischensumme
+					<h:outputText id="totalWithoutTax" value="#{shoppingCartBean.totalWithoutTax}">
+						<f:convertNumber maxFractionDigits="2" for="totalWithoutTax" pattern="#,##0.00 €"/>
+					</h:outputText>
+				</f:facet>
 			</p:column>
 			<p:column>
 				<f:facet name="header"></f:facet>
 				<h:panelGrid columns="2">
 					<p:commandLink actionListener="#{shoppingCartBean.removeArticle(article)}" value="entfernen" update=":shoppingCartForm:messages, :shoppingCartForm:shoppingCart, :searchForm:cartPanel"/>
 				</h:panelGrid>
+				<f:facet name="footer">Endpreis
+					<h:outputText id="total" value="#{shoppingCartBean.total}">
+						<f:convertNumber maxFractionDigits="2" for="total" pattern="#,##0.00 €"/>
+					</h:outputText>
+				</f:facet>
 			</p:column>
 		</p:dataTable>
+		<p:commandButton value="Warenkorb leeren" actionListener="#{shoppingCartBean.deleteShoppingCart}" update=":shoppingCartForm:messages, :shoppingCartForm:shoppingCart, :searchForm:cartPanel"></p:commandButton>
 		</h:form>
 	</ui:define>
 	</ui:composition>

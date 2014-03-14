@@ -1,7 +1,9 @@
 package de.professional_webworkx.presentation;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.enterprise.context.SessionScoped;
@@ -24,6 +26,8 @@ public class ShoppingCartBean implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1332117572442977016L;
+	private final double MWST	= 1.19;
+	
 	
 	// ShoppingCart
 	private List<Article> shoppingCart = new ArrayList<>();
@@ -52,6 +56,34 @@ public class ShoppingCartBean implements Serializable {
 	
 	public String showShoppingCart() {
 		return "shoppingCart";
+	}
+	
+	// diese Methode gibt uns den Netto-Gesamtpreis zurück
+	public BigDecimal getTotalWithoutTax() {
+		double total = 0;
+		
+		// das nette an einer Liste ist, das man sich einen Iterator von ihr besorgen kann und damit
+		// einmal durch die gesamte Liste laufen kann und sich die Weter holen kann, die man haben
+		// möchte, in diesem Fall also die Einzelpreise
+		
+		// Shift + Alt + L öffnen diesen Dialog um die Rückgabevariable zu erstellen
+		Iterator<Article> itr = shoppingCart.iterator();
+		while(itr.hasNext()) {
+			// jeder Artikel im Warenkorb wird geholt und der entsprechende Preis wird aufsummiert
+			total += itr.next().getArticlePrice();
+		}
+		return new BigDecimal(total);
+	}
+	
+	// Gesamtpreis Brutto
+	public BigDecimal getTotal() {
+		return new BigDecimal(getTotalWithoutTax().doubleValue()*MWST);
+	}
+	// diese Methode leert den Warenkorb komplett
+	public void deleteShoppingCart() {
+		int articleCount = shoppingCart.size();
+		shoppingCart.clear();
+		addMessage("Warenkorb wurde geleert - es wurden " + articleCount + " entfernt!");
 	}
 	
 	// damit können wir dann gleich anzeigen, das ein Artikel 

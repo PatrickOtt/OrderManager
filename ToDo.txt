@@ -1,32 +1,30 @@
-Herzlich willkommen zum 10. Teil des Primefaces Tutorials - inzwischen auch in FullHD :-D
+Willkommen zum 11. Teil. 
 
-Heute wollen wir uns den Warenkorb bauen, hierzu hab ich mir überlegt, wir machen ein panel in den Header der Seite, direkt unter die
-Suchbox, dort wird dann später angezeigt, ob der Warenkorb noch leer ist oder wieviele Artikel schon drin liegen.
+Heute nur ganz kurz, ich möchte eben noch zwei Funktionen zum Warenkorb hinzufügen,
 
-Dazu habe ich mir ein png aus einer Web-Library runtergeladen.. das liegt ja später auch mit im Repository bei Github.
+1. die Anzeige des Gesamtnettos und -bruttos
+2. einen Knopf zum Leeren des Warenkorbs (auf einmal)
 
-Implementierungstechnisch dachte ich an eine eigene CDI Bean, vielleicht ShoppingCartPM, die uns eine Liste mit Artikeln
-halten kann und der wir einfach per Klick auf den entsprechenden Artikel einen hinzufügen oder auch wieder entfernen können.
+Schauen wir ob das Ganze schon funktioniert.
 
-Los geht's..
+So, mein Kleiner Sohn ist leider etwas erkältet und brauchte mich eben, daher die kurze Pause.
 
-So schnell ging das.. So, nun haben wir die Artikel schon im Warenkorb liegen. 
-Designtechnisch muss ich gestehen, hab ich kein Händchen dafür, daher sieht das eher spartanisch aus.
-Aber egal, wenn jetzt Artikel im Korb liegen, sollen die ja auch wenigstens noch auf einer Übersichtsseite mal angezeigt
-werden, damit der User nochmal prüfen kann, ob er alles hat oder vielleicht irgendwas zuviel rein hat.
+Bauen wir uns nun den Knopf zum Leeren des Korbs.
+Die entsprechende Methode könnte man nun noch etwas ellaborierter gestalten und 
+den Kunden incl. seines Warenkorbs speichern um ihm irgendwann mal eine Mail
+zuschicken und zu fragen, ob er vielleicht doch Interesse an unserern Produkten und
+Artikeln hat. 
 
-Dazu bauen wir eine neue XHTML Seite, ich nenn' die mal shoppingCart.xhtml. Da zeigen
-wir den User gleich die Liste an.
+Doch das vertage ich auf die nächste Episode. 
 
-Testen..
+Okay, zum Schluß noch den Gesamtpreis incl. MWST.
+Hierzu gehen wir erstmal einen ganz einfachen und für den produktiven Betrieb
+nicht besonders guten Weg, dies dient der Veranschaulichung.
 
-Cool, damit ist der relativ primitive Einkaufskorb schon fertig.
-Im nächsten Schritt müsste man sich nun überlegen, wie die Bezahlung erfolgen soll und
-über welche APIs man hier eventuell noch Informationen bezieht, z.B. im Unternehmen, 
-wo die Mitarbeiter per Chipkarte o.ä. an einem zentralen TTerminal bezahlen, das uns
-dann ein bezahlt Flag setzt oder so.
 
-Ansonsten gibt's auch ganz nette Beispiele für die PayPal Integration. Bei Gelegenheit
-werde ich da nochmal ansetzen und ein Video nachschieben.
+Nett, das Ganze bastel ich noch in etwas schöner und pushe es dann wieder
+zu GitHub auf das OrderManager Repo.
 
-Code pushe ich wieder zu Github. 
+Vielen Dank für das Feedback per E-Mail und die Kommentare auf der Youtubeseite!
+Freut mich. Ton gibt es sicher auch irgendwann mal.
+
